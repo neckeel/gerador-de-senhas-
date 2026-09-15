@@ -11,7 +11,7 @@ const checkbox = document.querySelectorAll('.checkbox');
 const forcaSenha = document.querySelector('forca');
 
 botoes[0].onclik = diminuiTamanho;
-botoes[1].onclik = aumentatamanho;
+botoes[1].onclik = aumentaTamanho;
 
 function diminuiTamanho(){
     if(tamanhoSenha> 1){
@@ -22,7 +22,7 @@ function diminuiTamanho(){
     geraSenha();
 }
 
-functionaumnetaTamanho(){
+function aumentaTamanho(){
     if(tamanhoSenha< 20){
         //tamanhoSenha = tamanhoSenha+1;
         tamanhoSenha++;
@@ -31,3 +31,33 @@ functionaumnetaTamanho(){
     geraSenha();
 }
 
+for(i=0; i< checkbox.length;i++){
+    checkbox[i].onclik = geraSenha;
+}
+
+geraSenha();
+function geraSenha(){
+    let alfabeto = ";
+    if(checkbox[0].cheked){
+    alfabeto = alfabeto + letrasMaiusculas;
+}
+if(checkbox[1].cheked){
+    alfabeto = alfabeto + letrasMinusculas;
+}
+if(checkbox[2].cheked){
+    alfabeto = alfabeto + numeros;
+}
+if(checkbox[3].cheked){
+    alfabeto = alfabeto + simbolos;
+}
+
+let senha = ";
+for(let i=0;i<tamanhoSenha;i++){
+let numeroSenha = math.random()*alfabeto.length;
+numeroAleatorio = math.floor(numeroAleatorio);
+senha = senha + alfabeto[numeroAleatorio];
+}
+
+campoSenha.value = senha;
+clasificasenha(alfabeto.length);
+}
