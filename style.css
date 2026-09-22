@@ -146,19 +146,17 @@ body{
         background-color: #00FF85;
         width: 100%;
     }
+.parametro-senha-textos{
+    display: flex;
+    justify-content: space-between;
+}
 
-    .parametro-senha-textos{
-        display: flex;
-        justify-content: space-between;
-
+@media screen and (min-width: 768px) {
+    .parametro-coluna__senha{
+        flex-direction: row;
     }
+}
 
-    @media screen and(min-width:768px){
-        .parametro-coluna__senha{
-            flex-direction: row;
-        }
-          
-    }
 
     
         
